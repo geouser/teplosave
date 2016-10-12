@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14px" height="25px" viewBox="0 0 14 25" preserveAspectRatio="xMidYMid meet" >
+    <line id="e1_line" x1="7" y1="0.5" x2="7" y2="24.5" stroke="#8C8C8C" style="stroke-width: 2px;" fill="#C8C8C8"/>
+
+    <line id="e54_line" x1="7" y1="0.5" x2="13.5" y2="7" stroke="#8C8C8C" style="stroke-width: 2px; fill: none;"/>
+    <line id="e70_line" x1="7" y1="0.5" x2="0.5" y2="7" stroke="#8C8C8C" style="stroke-width: 2px; fill: none;"/>
+    <line id="e84_line" x1="7" y1="24.5" x2="13.5" y2="18" stroke="#8C8C8C" style="stroke-width: 2px; fill: none;"/>
+    <line id="e98_line" x1="7" y1="24.5" x2="0.5" y2="18" stroke="#8C8C8C" style="stroke-width: 2px; fill: none;"/>
+</svg>

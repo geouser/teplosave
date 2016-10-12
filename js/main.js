@@ -60,6 +60,14 @@ jQuery(document).ready(function($) {
     });
 
 
+    /*---------------------------
+                                  Products slider
+    ---------------------------*/
+    $('.slider').slick({
+        slidesToShow: 2
+    })
+
+
 
     /*----------------------------
                               SEND FORM
