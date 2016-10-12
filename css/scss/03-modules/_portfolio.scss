@@ -121,4 +121,20 @@
         top: -13px;
         margin-left: -15px;
     }
+
+    &.gradient {
+        background: -moz-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(46,184,143,0.72)), color-stop(100%, rgba(0,173,203,0.72)));
+        background: -webkit-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+        background: -o-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+        background: -ms-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+        background: linear-gradient(to right, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+        color: #fff;
+        margin-top: 45px;
+        margin-bottom: 20px;
+
+        &:before {
+            background-image: url(../images/quotes-colored.png);
+        }
+    }
 }
