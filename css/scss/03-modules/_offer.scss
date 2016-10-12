@@ -43,6 +43,27 @@
                 text-align: center;
                 height: 90px;
                 margin-bottom: 10px;
+                &:before {
+                    height: 100%;
+                    content: "";
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                img {
+                    display: inline-block;
+                    vertical-align: middle;
+                    max-width: 98%;
+                }
+                &.first {
+                    img {
+                        width: 100px;
+                    }
+                }
+                &.second {
+                    img {
+                        width: 70px;
+                    }
+                }
             }
             em {
                 font: 30px $ub;
