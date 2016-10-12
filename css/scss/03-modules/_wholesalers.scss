@@ -1,0 +1,141 @@
+.chain-box {
+    @include flex($alignI: flex-start);
+    margin-top: 42px;
+
+    &.grid-4 {
+        .chain__item {
+            width: 25%;
+
+            &:not(:last-child):after {
+                content: '';
+                width: 140px;
+                height: 4px;
+                position: absolute;
+                right: -70px;
+                top: 62px;
+                margin-top: -2px;
+                background-image: url(../images/dots.svg);
+                background-size: auto 100%;
+                background-repeat: repeat-x;
+                background-position: 0 0;
+            }
+
+            &__icon {
+                width: 125px;
+                height: 125px;
+                margin-bottom: 25px;
+
+                &:before {
+                    background-size: auto 56px;
+                }
+            }
+        }
+    }
+
+    &.grid-5 {
+        .chain__item {
+            width: 20%;
+
+            &:not(:last-child):after {
+                content: '';
+                width: 120px;
+                height: 4px;
+                position: absolute;
+                right: -60px;
+                top: 52px;
+                margin-top: -2px;
+                background-image: url(../images/dots.svg);
+                background-size: auto 100%;
+                background-repeat: repeat-x;
+                background-position: 0 0;
+            }
+
+            &__icon {
+                width: 105px;
+                height: 105px;
+            }
+        }
+    }
+}
+
+.chain__item {
+    position: relative;
+
+    &__icon  {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-bottom: 8px;
+        background: -moz-linear-gradient(left, rgba(46,184,143,1) 0%, rgba(0,173,203,1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(46,184,143,1)), color-stop(100%, rgba(0,173,203,1)));
+        background: -webkit-linear-gradient(left, rgba(46,184,143,1) 0%, rgba(0,173,203,1) 100%);
+        background: -o-linear-gradient(left, rgba(46,184,143,1) 0%, rgba(0,173,203,1) 100%);
+        background: -ms-linear-gradient(left, rgba(46,184,143,1) 0%, rgba(0,173,203,1) 100%);
+        background: linear-gradient(to right, rgba(46,184,143,1) 0%, rgba(0,173,203,1) 100%);
+
+        &:before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background-repeat: no-repeat;
+            background-size: auto 46px;
+            background-position: 50% 50%;
+            image-rendering: crisp-edges;
+        }
+
+        &:after {
+            content: '';
+            width: -webkit-calc(100% - 4px);
+            width: calc(100% - 4px);
+            height: -webkit-calc(100% - 4px);
+            height: calc(100% - 4px);
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            background-color: #F4FBFC;
+            z-index: -1;
+        }
+
+        &.plant:before {
+            background-image: url(../images/plant-gr.svg);
+        }
+        &.percent:before {
+            background-image: url(../images/percent-gr.svg);
+        }
+        &.headphones:before {
+            background-image: url(../images/headphones-gr.svg);
+        }
+        &.sheet:before {
+            background-image: url(../images/sheet-gr.svg);
+        }
+        &.valik:before {
+            background-image: url(../images/valik-gr.svg);
+        }
+        &.man:before {
+            background-image: url(../images/man-gr.svg);
+        }
+        &.calendar:before {
+            background-image: url(../images/calendar-gr.svg);
+        }
+        &.key:before {
+            background-image: url(../images/key-gr.svg);
+        }
+    }
+
+
+
+    &__text {
+        font-size: 16px;
+        font-family: $ub;
+        color: #333;
+        padding: 0 15px;
+    }
+}
