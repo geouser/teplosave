@@ -1,3 +1,80 @@
 .offer {
-    height: 800px;
+    height: 499px;
+    padding: 0;
+    background-image: url("../images/offer_bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+    .wrapper {
+        @include flex();
+    }
+
+    .content-block {
+        width: -webkit-calc(100% - 365px);
+        width: calc(100% - 365px);
+        padding-right: 45px;
+        text-align: right;
+
+        p {
+            font: 38px/60px $ub;
+            margin-bottom: 7px;
+            color: #FFF;
+            span {
+                display: block;
+                font: 78px/60px $ul;
+            }
+        }
+        .weDo {
+            margin-top: 35px;
+        }
+        .weDoIcon {
+            width: 250px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 90px;
+            &:last-child{
+                margin-right: 0;
+            }
+            i {
+                display: block;
+                text-align: center;
+                height: 90px;
+                margin-bottom: 10px;
+                &:before {
+                    height: 100%;
+                    content: "";
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                img {
+                    display: inline-block;
+                    vertical-align: middle;
+                    max-width: 98%;
+                }
+                &.first {
+                    img {
+                        width: 100px;
+                    }
+                }
+                &.second {
+                    img {
+                        width: 70px;
+                    }
+                }
+            }
+            em {
+                font: 30px $ub;
+                color: #FFF;
+            }
+        }
+    }
+    .vertical-form {
+        padding: 38px 40px;
+        p {
+            color: #FFF;
+        }
+    }
 }
