@@ -1,0 +1,106 @@
+.bottom-form {
+    background-image: url(../images/bottom-form.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    color: #fff;
+
+    .wrapper {
+        @include flex();
+    }
+
+    .content-block {
+        width: -webkit-calc(100% - 365px);
+        width: calc(100% - 365px);
+        padding-right: 45px;
+        text-align: right;
+
+        p {
+            font-family: $ub;
+            font-size: 30px;
+            margin-bottom: 7px;
+        }
+
+        .teplosave {
+            font-family: $ul;
+            font-size: 78px;
+            text-transform: uppercase;
+        }
+
+        .garanty {
+            font-size: 18px;
+            text-transform: uppercase;
+            font-family: $u;
+            background-color: rgba(255, 176, 0, .7);
+            display: inline-block;
+            margin-top: 50px;
+
+            i {
+                width: 60px;
+                height: 60px;
+                display: inline-block;
+                vertical-align: middle;
+                background-color: $orange;
+                font-size: 37px;
+                text-align: center;
+                line-height: 60px;
+            }
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 18px;
+            }
+        }
+    }
+}
+
+
+.vertical-form {
+    display: block;
+    width: 365px;
+    padding: 40px;
+    background: -moz-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(46,184,143,0.72)), color-stop(100%, rgba(0,173,203,0.72)));
+    background: -webkit-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+    background: -o-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+    background: -ms-linear-gradient(left, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+    background: linear-gradient(to right, rgba(46,184,143,0.72) 0%, rgba(0,173,203,0.72) 100%);
+
+    &__title {
+        font-size: 30px;
+        font-family: $ub;
+        margin-bottom: 6px;
+    }
+
+    &__subtitle {
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .confidence {
+        @include flex();
+        margin-top: 2px;
+
+        .lock {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            background-image: url(../images/lock.svg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            margin-right: 10px;
+        }
+
+        span {
+            width: -webkit-calc(100% - 32px);
+            width: calc(100% - 32px);
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+}

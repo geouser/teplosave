@@ -1,0 +1,56 @@
+.footer {
+    background-color: #006F84;
+    padding: 35px 0;
+    color: #fff;
+    font-size: 16px;
+
+    .wrapper {
+        @include flex($wrap: nowrap);
+        text-align: left;
+    }
+
+    address {
+        font-style: normal;
+    }
+
+    a[href^=tel] {
+        font-size: 20px;
+        font-family: $ub;
+    }
+
+    .studio {
+        color: #64B1BF;
+
+        a {
+            color: inherit;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .site {
+        img {
+            margin-bottom: 5px;
+        }
+    }
+
+    & div {
+        position: relative;
+
+        &:not(:last-child):after {
+            content: '';
+            width: 2px;
+            height: 50px;
+            position: absolute;
+            right: -66px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+            background-color: #69B5C3;
+        }
+    }
+}
