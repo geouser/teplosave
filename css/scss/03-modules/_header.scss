@@ -2,7 +2,7 @@
 .mainHeader {
     position: absolute;
     height: 120px;
-    background-color: #FFF;
+    background-color: #F4FBFC;
     @include position(absolute, 0, 0, auto, 0);
     &__info {
         .wrapper {
