@@ -20,35 +20,34 @@
     </head>
     <body>
 
-
        
         <!--=================================================================================================-->
                                                     <!-- HEADER -->
         <header class="mainHeader">
-            <div class="wrapper">
-
-                <nav class="mainNav"><!-- start navigation -->
+            <nav class="mainNav"><!-- start navigation -->
+                <div class="wrapper">
                     <ul>
-                        <li><a href="#" class="active">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Practive</a></li>
-                        <li><a href="#">Lawyers</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">О КОМПАНИИ</a></li>
+                        <li><a href="#">О ПРОДУКЦИИ</a></li>
+                        <li><a href="#">НАШИ ОБЪЕКТЫ</a></li>
+                        <li><a href="#">ОПТОВИКАМ</a></li>
+                        <li><a href="#">НАШИ ПРЕИМУЩЕСТВА</a></li>
                     </ul>
-                </nav><!-- end nav -->
+                </div>
+            </nav><!-- end nav -->
 
-                <div class="mainHeader__info">
-                    <div class="social">
-                        <a href="" class="social__item"></a>
-                        <a href="" class="social__item"></a>
-                        <a href="" class="social__item"></a>
-                    </div>
-                    <a href="tel:+971 55 915 94 49" class="tel">+971 55 915 94 49</a>
-                    <a href="mailto:hello@law.com" class="mail">hello@law.com</a>
-                </div><!-- end mainHeader__info -->
+            <div class="mainHeader__info">
+                <div class="wrapper">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="">
+                        <h1>Полимерные наливные полы и гидроизоляция</h1>
+                    </a>
+                    <a href="mailto:primer-pol@yandex.ru" class="mail">primer-pol@yandex.ru</a>
+                    <a href="tel:+7 845 123 45 67" class="tel">+7 845 123 45 67</a>
+                    <button class="order-button">Заказать звонок</button>
+                </div>
+            </div><!-- end mainHeader__info -->
 
-            </div><!-- end wrapper -->
         </header><!-- end header -->
         
         <button class="menu-button"> 
@@ -61,9 +60,48 @@
         <!--=================================================================================================-->
                                                     <!-- OFFER SECTION -->
         <section class="offer">
-            <div class="offer__info wrapper"><!-- start offerInfo -->
-                <h1>Free advice from our</h1>
-                <button class="button">Request a free consultation</button>
+            <div class="wrapper"><!-- start offerInfo -->
+                <div class="content-block">
+                    <p><span>Лучшие материалы</span> от российского производителя</p>
+
+                    <div class="weDo">
+                       <div class="weDoIcon">
+                           <i></i>
+                           <em>Наливные полы</em>
+                       </div>
+                       <div class="weDoIcon">
+                           <i></i>
+                           <em>Гидроизоляция</em>
+                       </div>
+                    </div>
+                </div>
+
+                <form action="" class="vertical-form">
+                    <p class="vertical-form__title">Заполните форму</p>
+                    <p class="vertical-form__subtitle">укажите площадь помещения и получите бесплатный расчет количества материалов!</p>
+                    
+                    <div class="form-group">
+                        <div class="input input--user">
+                            <input type="text" name="name" placeholder="Введите Ваше имя">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input input--phone">
+                            <input type="text" name="phone" placeholder="Укажите Ваш телефон">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input input--square">
+                            <input type="text" name="square" placeholder="Укажите площадь помещения">
+                        </div>
+                    </div>
+                    <button class="button">Оставить заявку</button>
+
+                    <p class="confidence">
+                        <i class="lock"></i>
+                        <span>Ваши данные в безопасности и не будут переданы третьим лицам</span>
+                    </p>
+                </form> <!-- end vertical-form -->
             </div><!-- end offerInfo -->
         </section><!-- end offer section --> 
 

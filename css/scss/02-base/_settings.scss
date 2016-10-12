@@ -10,6 +10,11 @@ body {
     font-family: $u;
     font-size: 18px;
     background-color: #F4FBFC;
+    padding-top: 120px;
+    @media (max-width: 1170px) {
+        padding-top: 0;
+    }
+    color: $text;
 }
 
 h2 {

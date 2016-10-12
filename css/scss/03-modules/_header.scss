@@ -1,57 +1,65 @@
          
 .mainHeader {
-    /*@include position(absolute, 0, auto, auto, 0);*/
-    width: 100%;
-    z-index: 100;
-    background: #fff;
-    margin: 0;
-    @include transition(all, .4s);
-    
-        /*.................media.............*/
-        @include m800 {
-            @include position(fixed, 0, auto, auto, -100%);
-            width: 260px !important;
-            height: 100%;
-            text-align: center;
-            background-color: #fff;
-            margin-top: 0;
-            padding: 20px 0;
-            z-index: 100;
-            overflow: scroll;
-             
-            &.active { left: 0;}
-            .wrapper {
-                display: block;
-            }
+    position: absolute;
+    height: 120px;
+    background-color: #FFF;
+    @include position(absolute, 0, 0, auto, 0);
+    &__info {
+        .wrapper {
+            @include flex(); 
+            color: $blue;  
         }
-        /*.............end media..............*/
+        padding: 20px 0;
+    }
+    h1 {
+        font: 16px/16px $ub;
+        color: $text;
+        width: calc(100% - 165px);
+        display: inline-block;
+        vertical-align: middle;
+        border-left: 2px solid $text;
+        padding-left: 10px;
+    }
 }
 
+.logo {
+    width: 435px;
+    text-align: left;
+    img {
+        width: 150px;
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
+
+.tel,
+.mail {
+    font: 18px $u;
+    color: $blue;
+}
 
 /* ------------------------------------ */
 /*  NAV STYLES  */
 .mainNav {
+    width: 100%;
+    background: $green;
     ul {
         list-style-type: none;
-        a {
+        @include flex();
+        li {
             display: inline-block;
-            margin: 0 20px;
-            text-decoration: none;
-            @include transition(all, .2s);             
-            &:hover {}
-        }
-
-            /*.................media.............*/
-            @include m800 { 
-                display: block;
-                position: relative;
-                li a  {   
-                    margin: 0 0 25px 0;
-                    &.active {color: #ECCC1D;}
-                    &:hover  {background: transparent;}
-                } 
+            a {
+                font: 14px/40px $ub;
+                text-transform: uppercase;
+                color: #fff;
+                padding: 0 25px;
+                @include transition(all, .2s);
+                &:hover {
+                    text-decoration: underline;
+                }
             }
-            /*.............end media.............*/
+        }
     }
 }
 
