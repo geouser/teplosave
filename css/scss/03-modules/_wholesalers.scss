@@ -1,11 +1,19 @@
 .chain-box {
     @include flex($alignI: flex-start);
     margin-top: 42px;
+    @media (max-width: 800px) {
+        -webkit-justify-content: center;
+                justify-content: center;
+    }
 
     &.grid-4 {
         .chain__item {
             width: 25%;
-
+            @media (max-width: 800px) {
+                width: 300px;
+                margin-bottom: 25px;
+                text-align: center;
+            }
             &:not(:last-child):after {
                 content: '';
                 width: 140px;
@@ -18,13 +26,18 @@
                 background-size: auto 100%;
                 background-repeat: repeat-x;
                 background-position: 0 0;
+                @media (max-width: 800px) {
+                    display: none;
+                }
             }
 
             &__icon {
                 width: 125px;
                 height: 125px;
                 margin-bottom: 25px;
-
+                @media (max-width: 800px) {
+                    margin-bottom: 10px;
+                }
                 &:before {
                     background-size: auto 56px;
                 }
