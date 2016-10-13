@@ -1,10 +1,15 @@
 .chain-box {
-    @include flex($alignI: flex-start);
+    @include flex($alignI: flex-start, $justify: center);
     margin-top: 42px;
 
     &.grid-4 {
         .chain__item {
             width: 25%;
+
+            @media ($phones) {
+                width: 50%;
+                margin-bottom: 50px;
+            }
 
             &:not(:last-child):after {
                 content: '';
@@ -18,12 +23,22 @@
                 background-size: auto 100%;
                 background-repeat: repeat-x;
                 background-position: 0 0;
+
+                @media ($tablets) {
+                    display: none;
+                }
             }
 
             &__icon {
                 width: 125px;
                 height: 125px;
                 margin-bottom: 25px;
+
+                @media ($phones) {
+                    width: 105px;
+                    height: 105px;
+                    margin-bottom: 10px;
+                }
 
                 &:before {
                     background-size: auto 56px;
@@ -35,6 +50,15 @@
     &.grid-5 {
         .chain__item {
             width: 20%;
+
+            @media ($tablets) {
+                width: 33.333%;
+                margin-bottom: 50px;
+            }
+
+            @media ($phones) {
+                width: 50%;
+            }
 
             &:not(:last-child):after {
                 content: '';
@@ -48,6 +72,10 @@
                 background-size: auto 100%;
                 background-repeat: repeat-x;
                 background-position: 0 0;
+
+                @media ($tablets) {
+                    display: none;
+                }
             }
 
             &__icon {
@@ -137,5 +165,10 @@
         font-family: $ub;
         color: #333;
         padding: 0 15px;
+
+        @media (max-width: 450px) {
+            font-size: 13px;
+            padding: 0 5px;
+        }
     }
 }

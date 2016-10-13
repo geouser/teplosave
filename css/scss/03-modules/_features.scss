@@ -5,6 +5,16 @@
         font-family: $ub;
         font-size: 38px;
         color: #333333;
+
+        @media ($tablets) {
+            br {
+                display: none;
+            }
+        }
+
+        @media ($phones) {
+            font-size: 28px;
+        }
     }
 
     .features-box {

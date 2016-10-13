@@ -18,6 +18,10 @@
         margin-bottom: 25px;
         position: relative;
         z-index: 2;
+
+        @media (max-width: 600px) {
+            font-size: 25px;
+        }
     }
 }
 
@@ -197,6 +201,10 @@
         padding: 65px 0 75px;
         text-align: center;
 
+        @media (max-width: 600px) {
+            width: 40%;
+        }
+
         img {
             display: inline-block;
             max-width: 90%;
@@ -225,11 +233,21 @@
         position: relative;
         z-index: -1;
 
+        @media (max-width: 600px) {
+            width: 60%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
         .title {
             font-size: 24px;
             font-family: $ub;
             font-weight: normal;
             margin-bottom: 20px;
+
+            @media (max-width: 600px) {
+                font-size: 20px;
+            }
 
             &:after {
                 content: '';

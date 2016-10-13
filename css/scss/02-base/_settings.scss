@@ -21,6 +21,10 @@ h2 {
     font-size: 48px;
     color: $blue;
     font-family: $ub;
+
+    @media ($phones) {
+        font-size: 38px;
+    }
 }
 
 .white {

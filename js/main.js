@@ -64,7 +64,15 @@ jQuery(document).ready(function($) {
                                   Products slider
     ---------------------------*/
     $('.slider').slick({
-        slidesToShow: 2
+        slidesToShow: 2,
+        responsive: [
+            {
+                breakpoint: 1070,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     })
 
 

@@ -1,12 +1,24 @@
 .portfolio {
-    background-image: url(../images/portfolio.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
     position: relative;
     z-index: 1;
     color: #fff;
     padding-top: 0;
+
+    @media (min-width: 1001px) {
+        background-image: url(../images/portfolio.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    @media ($tablets) {
+        background: -moz-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgb(46,184,143)), color-stop(100%, rgb(0,173,203)));
+        background: -webkit-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -o-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -ms-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: linear-gradient(to right, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+    }
 
     &:after {
         content: '';
@@ -38,6 +50,17 @@
             font-family: $ub;
             position: relative;
 
+            @media ($tablets) {
+                padding: 0 15px;
+            }
+
+            @media ($phones) {
+                width: 50%;
+                margin: 25px 0;
+                padding: 0 10px;
+                font-size: 14px;
+            }
+
             &:not(:last-child):after {
                 content: '';
                 width: 2px;
@@ -50,6 +73,12 @@
                 position: absolute;
                 background-color: #fff;
                 top: 50%;
+            }
+
+            @media ($phones) {
+                &:nth-child(2):after {
+                    display: none;
+                }
             }
         }
     }
@@ -69,6 +98,15 @@
         width: -webkit-calc(50% - 30px);
         width: calc(50% - 30px);
         margin: 0 15px;
+
+        @media ($phones) {
+            width: 100%;
+            margin: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
     }
 
     .item {
@@ -82,6 +120,20 @@
         background-size: cover;
         float: left;
 
+        @media ($tablets) {
+            height: 200px;
+        }
+
+        @media ($phones) {
+            margin-bottom: 20px;
+            width: -webkit-calc(50% - 10px);
+            width: calc(50% - 10px);
+        }
+
+        @media (max-width: 500px) {
+            height: 150px;
+        }
+
         &:last-child {
             margin-bottom: 0;
         }
@@ -92,6 +144,14 @@
 
         &.height-2x {
             height: 540px;
+
+            @media ($tablets) {
+                height: 430px;
+            }
+
+            @media (max-width: 500px) {
+                height: 300px;
+            }
         }
 
         &.pull-right {
@@ -110,6 +170,22 @@
     display: inline-block;
     position: relative;
     margin-top: 30px;
+
+    @media ($tablets) {
+        margin-left: 15px;
+        margin-right: 15px;
+        br {
+            display: none;
+        }
+    }
+
+    @media ($phones) {
+        font-size: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
     &:before {
         content: '';

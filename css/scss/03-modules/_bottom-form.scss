@@ -86,9 +86,11 @@
                 display: inline-block;
                 vertical-align: middle;
                 padding: 0 18px;
-
-                display: block;
-                padding: 20px 18px;
+                
+                @media ($phones) {
+                    display: block;
+                    padding: 20px 18px;    
+                }
             }
         }
     }

@@ -1,12 +1,24 @@
 .form {
     padding: 40px 0 50px;
-    background-image: url(../images/form.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
+    
     position: relative;
     z-index: 1;
     color: #fff;
+
+    @media (min-width: 1001px) {
+        background-image: url(../images/form.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+    @media ($tablets) {
+        background: -moz-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgb(46,184,143)), color-stop(100%, rgb(0,173,203)));
+        background: -webkit-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -o-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -ms-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: linear-gradient(to right, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+    }
 
     &:after {
         content: '';
@@ -35,6 +47,10 @@
         font-family: $ul;
         margin-bottom: 13px;
         margin-top: 4px;
+
+        @media ($tablets) {
+            font-size: 38px;
+        }
     }
 }
 
@@ -44,7 +60,34 @@
     @include flex($justify: space-around);
     margin: 0 60px;
 
+    @media (max-width: 1200px) {
+        width: 100%;
+        margin: 50px auto 0;
+    }
+
+    @media ($tablets) {
+        width: 370px;
+        padding: 40px;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+        padding: 30px 15px;
+    }
+
     .form-group {
         width: 285px;
+
+        @media ($tablets) {
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
     }
 }
