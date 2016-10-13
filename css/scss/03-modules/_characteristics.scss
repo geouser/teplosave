@@ -105,7 +105,11 @@
                 @media (max-width: 800px) {
                     position: absolute;
                     left: 4px;
-                    top: 4px;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    transform: translateY(-50%);
                 }
             }
             &:after {
