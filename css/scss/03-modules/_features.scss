@@ -8,12 +8,15 @@
     }
 
     .features-box {
-        @include flex();
-        background-image: url(../images/features.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: 50% 50%;
+        @include flex($justify: center);
         margin-top: 30px;
+
+        @media (min-width: 1001px) {
+            background-image: url(../images/features.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
 
         .feature {
             width: 25%;
@@ -27,6 +30,36 @@
             background-size: cover;
             background-repeat: no-repeat;
             background-position: 50% 50%;
+
+            @media (max-width: 1200px) {
+                font-size: 16px;
+            }
+
+            @media ($tablets) {
+                background-color: #3A7176;
+                width: 33.33%;
+            }
+
+            @media (max-width: 850px) {
+                border-width: 5px;
+                height: 240px;
+            }
+
+            @media ($phones) {
+                width: 50%;
+            }
+
+            @media (max-width: 550px) {
+                font-size: 14px;
+                padding-top: 50px;
+            }
+
+            @media (max-width: 400px) {
+                width: 100%;
+                height: auto;
+                padding-top: 35px;
+                padding-bottom: 35px;
+            }
 
             &:after {
                 content: '';

@@ -55,7 +55,19 @@
     }
 
     @media (max-width: 1200px) {
-        
+        .wrapper {
+            display: block;
+        }
+        .wrapper div {
+            width: 100%;
+            text-align: center;
+            &:after {
+                display: none!important;
+            }
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
     }
 
 }

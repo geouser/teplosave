@@ -1,13 +1,29 @@
 .bottom-form {
-    background-image: url(../images/bottom-form.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
     color: #fff;
     padding: 0;
 
+    @media (min-width: 1001px) {
+        background-image: url(../images/bottom-form.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+    @media ($tablets) {
+        background: -moz-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgb(46,184,143)), color-stop(100%, rgb(0,173,203)));
+        background: -webkit-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -o-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: -ms-linear-gradient(left, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        background: linear-gradient(to right, rgb(46,184,143) 0%, rgb(0,173,203) 100%);
+        padding-bottom: 50px;
+    }
+
     .wrapper {
         @include flex();
+
+        @media ($tablets) {
+            display: block;
+        }
     }
 
     .content-block {
@@ -16,16 +32,30 @@
         padding-right: 45px;
         text-align: right;
 
+        @media ($tablets) {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+        }
+
         p {
             font-family: $ub;
             font-size: 30px;
             margin-bottom: 7px;
+
+            @media ($phones) {
+                font-size: 25px;
+            }
         }
 
         .teplosave {
             font-family: $ul;
             font-size: 78px;
             text-transform: uppercase;
+
+            @media ($phones) {
+                font-size: 50px;
+            }
         }
 
         .garanty {
@@ -45,13 +75,33 @@
                 font-size: 37px;
                 text-align: center;
                 line-height: 60px;
+
+                @media ($phones) {
+                    display: block;
+                    width: 100%;
+                }
             }
 
             span {
                 display: inline-block;
                 vertical-align: middle;
                 padding: 0 18px;
+
+                display: block;
+                padding: 20px 18px;
             }
+        }
+    }
+
+    .vertical-form {
+        @media ($tablets) {
+            margin: 0 auto;
+            background: rgba(0, 0, 0, .1);
+        }
+
+        @media (max-width: 400px) {
+            width: 100%;
+            padding: 30px 15px;
         }
     }
 }
@@ -80,6 +130,10 @@
 
     .form-group {
         margin-bottom: 20px;
+    }
+
+    .button {
+        width: 100%;
     }
 
     .confidence {
