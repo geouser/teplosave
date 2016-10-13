@@ -67,7 +67,7 @@ jQuery(document).ready(function($) {
         slidesToShow: 2,
         responsive: [
             {
-                breakpoint: 1070,
+                breakpoint: 1170,
                 settings: {
                     slidesToShow: 1
                 }
