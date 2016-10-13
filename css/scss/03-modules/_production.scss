@@ -46,6 +46,10 @@
         bottom: -85px;
         right: 80px;
         z-index: -1;
+
+        @media ($phones) {
+            display: none;
+        }
     }
 
     &:after {
@@ -179,6 +183,11 @@
     position: relative;
     z-index: 1;
 
+    @media (max-width: 1169px) {
+        margin: 0;
+        box-shadow: none;
+    }
+
     &:after {
         content: '';
         width: -webkit-calc(100% - 10px);
@@ -200,6 +209,7 @@
         margin: 0;
         padding: 65px 0 75px;
         text-align: center;
+        @extend %vertAlign;
 
         @media (max-width: 600px) {
             width: 40%;
@@ -208,6 +218,11 @@
         img {
             display: inline-block;
             max-width: 90%;
+            vertical-align: middle;
+
+            @media (max-width: 600px) {
+                max-width: 80%;
+            }
         }
 
         figcaption {
@@ -266,17 +281,31 @@
 
             &:not(:last-child) {
                 margin-bottom: 23px;
+
+                @media (max-width: 600px) {
+                    margin-bottom: 10px;
+                }
             }
 
             i.im {
                 width: 30px;
                 font-size: 25px;
                 color: #8C8C8C;
+
+                @media (max-width: 600px) {
+                    font-size: 18px;
+                    width: 20px;
+                }
             }
 
             p {
                 width: -webkit-calc(100% - 30px);
                 width: calc(100% - 30px);
+
+                @media (max-width: 600px) {
+                    width: -webkit-calc(100% - 20px);
+                    width: calc(100% - 20px);
+                }
             }
 
             &-title {
@@ -284,10 +313,18 @@
                 color: #8C8C8C;
                 font-family: $ub;
                 display: block;
+
+                @media (max-width: 600px) {
+                    font-size: 11px;
+                }
             }
 
             &-text {
                 font-size: 16px;
+
+                @media (max-width: 600px) {
+                    font-size: 11px;
+                }
             }
         }
     }
@@ -306,6 +343,11 @@
         padding: 20px 30px 30px;
         position: relative;
         z-index: -1;
+
+        @media (max-width: 600px) {
+            padding: 10px 15px 15px;
+            font-size: 14px;
+        }
 
         .title {
             text-transform: uppercase;

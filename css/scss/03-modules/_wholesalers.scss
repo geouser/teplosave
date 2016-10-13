@@ -1,6 +1,10 @@
 .chain-box {
     @include flex($alignI: flex-start, $justify: center);
     margin-top: 42px;
+    @media (max-width: 800px) {
+        -webkit-justify-content: center;
+                justify-content: center;
+    }
 
     &.grid-4 {
         .chain__item {
