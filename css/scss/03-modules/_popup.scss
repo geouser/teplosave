@@ -1,0 +1,22 @@
+.popup {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+    width: 365px;
+    position: relative;
+
+    form {
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+
+        .vertical-form {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}

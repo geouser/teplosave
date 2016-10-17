@@ -31,8 +31,11 @@
     }
 
     .site {
-        img {
+        .logo-text {
+            font-size: 25px;
+            font-family: $ub;
             margin-bottom: 5px;
+            text-transform: uppercase;
         }
     }
 

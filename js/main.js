@@ -7,6 +7,14 @@ window.params = {
 
 jQuery(document).ready(function($) {
 
+    wow = new WOW(
+      {
+      offset:       200,          // default
+      mobile:       false
+    }
+    )
+    wow.init();
+
     /*---------------------------
                                   ADD CLASS ON SCROLL
     ---------------------------*/
@@ -22,6 +30,24 @@ jQuery(document).ready(function($) {
         });
     });
       
+    /*---------------------------
+                                  Background video
+    ---------------------------*/
+    $('#bg-video').vide({
+        mp4: 'video/video.mp4',
+        poster: 'images/offer_bg.jpg'
+    }, {
+        volume: 0,
+        playbackRate: 1,
+        muted: true,
+        loop: true,
+        autoplay: true,
+        position: '50% 50%', // Similar to the CSS `background-position` property.
+        posterType: 'jpg', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+        resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+        bgColor: 'transparent', // Allow custom background-color for Vide div,
+        className: '' // Add custom CSS class to Vide div
+    });
 
     /*---------------------------
                                   MENU TOGGLE
@@ -76,6 +102,18 @@ jQuery(document).ready(function($) {
     })
 
 
+    $('.gallery').each(function() { // the containers for all your galleries
+        $(this).magnificPopup({
+            delegate: 'a', // the selector for gallery item
+            type: 'image',
+            fixedContentPos: false,
+            fixedBgPos: true,
+            gallery: {
+              enabled:true
+            }
+        });
+    });
+    
 
     /*----------------------------
                               SEND FORM

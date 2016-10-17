@@ -30,13 +30,20 @@
                     margin: 0;
                 }
                 i {
+                    position: absolute;
+                    top: 50%;
+                    right: 25px;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    transform: translateY(-50%);
                     margin-left: 20px;
                     @media (max-width: 800px) {
                         margin: 0;
                     }
                 }
                 li {
-                    padding-right: 26px;
+                    padding-right: 90px;
                     @media (max-width: 800px) {
                         padding: 0 0 0 80px;
                     }
@@ -53,13 +60,20 @@
                     margin: 0;
                 }
                 i {
+                    position: absolute;
+                    top: 50%;
+                    left: 25px;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    -o-transform: translateY(-50%);
+                    transform: translateY(-50%);
                     margin-right: 20px;
                     @media (max-width: 800px) {
                         margin: 0;
                     }
                 }
                 li {
-                    padding-left: 26px;
+                    padding-left: 90px;
                     @media (max-width: 800px) {
                         padding: 0 0 0 80px;
                     }
@@ -73,16 +87,23 @@
         li {
             color: #FFF;
             display: block;
-            font: 18px/56px $ub;
+            font-family: $ub;
+            font-size: 18px;
+            height: 50px;
             margin-bottom: 28px;
             position: relative;
+            @extend %vertAlign;
+
             @media (max-width: 800px) {
                 line-height: normal;
                 position: relative;
+                height: auto;
             }
             span {
                 position: relative;
                 z-index: 1;
+                display: inline-block;
+                vertical-align: middle;
                 @media (max-width: 800px) {
                     position: static;
                 }
@@ -104,8 +125,11 @@
                 z-index: 1;
                 @media (max-width: 800px) {
                     position: absolute;
-                    left: 4px;
+                    left: 4px!important;
+                    right: auto!important;
+                    width: 40px;
                     top: 50%;
+                    margin: 0!important;
                     -webkit-transform: translateY(-50%);
                     -ms-transform: translateY(-50%);
                     -o-transform: translateY(-50%);
