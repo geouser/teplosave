@@ -14,12 +14,6 @@
         background-color: rgba(0, 0, 0, .5);
         z-index: -1;
     }
-    @media (min-width: 700px) {
-        background-image: url("../images/offer_bg.jpg");
-    }
-    @media (max-width: 700px) {
-        background-image: url("../images/offer_bg_sm.jpg");
-    }
     background-repeat: no-repeat;
     background-position: 50% 50%;
     -webkit-background-size: cover;

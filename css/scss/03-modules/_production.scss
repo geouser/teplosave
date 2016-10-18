@@ -25,10 +25,6 @@
     }
 }
 
-.slider .slick-track {
-    padding: 15px 0;
-}
-
 .slider {
     margin: 0;
     position: relative;
@@ -174,12 +170,6 @@
 .product {
     box-shadow: 0px 1px 25px 0px rgba(51, 51, 51, 0.15);
     margin: 0 15px;
-    @include flex($alignI: stretch);
-    display: -webkit-box!important;
-    display: -webkit-flex!important;
-    display: -moz-flex!important;
-    display: -ms-flexbox!important;
-    display: flex!important;
     position: relative;
     z-index: 1;
 
@@ -203,27 +193,15 @@
     }
 
     &__image {
-        width: 255px;
+        width: 100%;
+        height: 250px;
         background-color: #fff;
         position: relative;
         margin: 0;
-        padding: 65px 0 75px;
         text-align: center;
-        @extend %vertAlign;
-
-        @media (max-width: 600px) {
-            width: 40%;
-        }
-
-        img {
-            display: inline-block;
-            max-width: 90%;
-            vertical-align: middle;
-
-            @media (max-width: 600px) {
-                max-width: 80%;
-            }
-        }
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
 
         figcaption {
             position: absolute;
@@ -233,26 +211,18 @@
             text-align: center;
 
             a {
-                color: $blue;
+                color: #fff;
                 text-decoration: underline;
             }
         }
     }
 
     &__info {
-        width: -webkit-calc(100% - 255px);
-        width: calc(100% - 255px);
+        width: 100%;
         padding: 25px 20px 25px 15px;
         text-align: left;
         background-color: #F4FBFC;
         position: relative;
-        z-index: -1;
-
-        @media (max-width: 600px) {
-            width: 60%;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
 
         .title {
             font-size: 24px;
@@ -344,6 +314,7 @@
         padding: 20px 30px 30px;
         position: relative;
         z-index: -1;
+        font-size: 14px;
 
         @media (max-width: 600px) {
             padding: 10px 15px 15px;

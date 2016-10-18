@@ -11,6 +11,13 @@ body {
     font-size: 18px;
     background-color: #F4FBFC;
     padding-top: 120px;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease;
+    -o-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    height: auto;
+
     @media (max-width: 1200px) {
         padding-top: 0;
     }

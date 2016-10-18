@@ -15,6 +15,25 @@ jQuery(document).ready(function($) {
     )
     wow.init();
 
+
+    /*Smooth loading*/
+    $( "body" ).delay( 500 ).queue(function(next) {
+        $(this).css({
+            opacity: '1',
+            visibility: 'visible'
+        });
+        next(); 
+    })
+
+    /*Scroll to section*/
+    $('.menu-link').on('click', function(event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        var targetTop = $(target).offset().top;
+        
+        $('html, body').animate({scrollTop: targetTop-100}, 800);
+    });
+
     /*---------------------------
                                   ADD CLASS ON SCROLL
     ---------------------------*/
@@ -91,11 +110,15 @@ jQuery(document).ready(function($) {
     ---------------------------*/
     $('.slider').slick({
         slidesToShow: 2,
+        adaptiveHeight: true,
+        infinite: true,
         responsive: [
             {
                 breakpoint: 1170,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                    infinite: true,
                 }
             }
         ]
