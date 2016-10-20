@@ -25,6 +25,37 @@ jQuery(document).ready(function($) {
         next(); 
     })
 
+    /*custom select*/
+    $('select').each(function(index, el) { 
+        var select = $(this);
+        var block = $(this).parent();
+        var label = block.append('<span class="select-label"></span>').find('.select-label');
+        var dropdown = block.append('<ul class="select-dropdown"></ul>').find('.select-dropdown');
+
+        select.css('display', 'none');
+        dropdown.css('display', 'none');
+
+        select.find('option').each(function(index, el) {
+            dropdown.append('<li class="select-dropdown-item" data-value="'+$(this).attr('value')+'">'+$(this).text()+'</li>')
+        });
+
+        label.on('click', function(event) {
+            event.preventDefault();
+            dropdown.slideToggle('fast');
+        });
+
+        label.text( dropdown.find('.select-dropdown-item').first().addClass('active').text() );
+        select.val( dropdown.find('.select-dropdown-item').first().attr('data-value') );
+
+        dropdown.find('.select-dropdown-item').on('click', function(event) {
+            event.preventDefault();
+            $(this).addClass('active').siblings().removeClass('active');
+            label.text($(this).text());
+            select.val( $(this).attr('data-value') );
+            dropdown.slideToggle('fast');
+        });
+    });
+
     /*Scroll to section*/
     $('.menu-link').on('click', function(event) {
         event.preventDefault();

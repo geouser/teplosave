@@ -115,7 +115,6 @@
     position: relative;
     border-radius: 5px;
     z-index: 1;
-    border: 1px solid rgba(0, 0, 0, .1);
 
     input {
         width: 100%;
@@ -125,7 +124,7 @@
         padding-left: 70px;
         padding-right: 20px;
         font-family: $u;
-        font-size: 18px;
+        font-size: 16px;
         color: $grey;
 
         @media ($phones) {
@@ -180,5 +179,76 @@
         text-align: center;
         font-family: $u;
     }
+}
 
+.select {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    z-index: 2;
+
+    .select-label {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        padding: 0 30px 0 15px;
+        line-height: 50px;
+        text-align: left;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 1px solid rgba(0, 0, 0, .1);
+        color: $grey;
+        background-color: #F4FBFC;
+        border: 0;
+        cursor: pointer;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-right: 2px solid $blue;
+            border-bottom: 2px solid $blue;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            margin-top: -7px;
+            margin-right: -7px;
+            box-sizing: border-box;
+        }
+    }
+
+    .select-dropdown {
+        position: absolute;
+        top: 100%;
+        margin-top: -5px;
+        width: 100%;
+        background-color: #F4FBFC;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        overflow: hidden;
+        padding-bottom: 5px;
+
+        &-item {
+            padding: 4px 15px 5px;
+            text-align: left;
+            color: #8c8c8c;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:hover,
+            &.active {
+                background-color: #CCEFF5;
+            }
+        }
+    }
 }

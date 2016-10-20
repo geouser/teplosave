@@ -1,5 +1,5 @@
 .offer {
-    height: 499px;
+    height: auto;
     padding: 0;
     position: relative;
     z-index: 1;
@@ -53,7 +53,7 @@
         }
 
         p {
-            font: 38px/60px $ub;
+            font: 45px/60px $ub;
             margin-bottom: 7px;
             color: #FFF;
             span {
@@ -77,59 +77,38 @@
         }
         .weDo {
             margin-top: 35px;
+            @include flex($alignI: flex-start, $justify: center);
         }
         .weDoIcon {
-            width: 250px;
+            width: 33.3333%;
             text-align: center;
             display: inline-block;
             vertical-align: top;
-            margin-right: 90px;
+            padding: 0 20px;
             @media (max-width: 1200px) {
-                width: 48%;
-                margin-right: 0;
+                width: 50%;
+                margin: 25px 0;
                 padding: 0 10px;
             }
             &:last-child{
                 margin-right: 0;
             }
-            i {
-                display: block;
-                text-align: center;
-                height: 90px;
-                margin-bottom: 10px;
-                &:before {
-                    height: 100%;
-                    content: "";
-                    display: inline-block;
-                    vertical-align: middle;
-                }
-                img {
-                    display: inline-block;
-                    vertical-align: middle;
-                    max-width: 98%;
-                }
-                &.first {
-                    img {
-                        width: 100px;
-                        @media (max-width: 1200px) {
-                            width: 80px;
-                        }
-                    }
-                }
-                &.second {
-                    img {
-                        width: 70px;
-                        @media (max-width: 1200px) {
-                            width: 56px;
-                        }
-                    }
+            .price {
+                font-size: 30px;
+                color: $orange;
+                line-height: normal;
+
+                @media (max-width: 600px) {
+                    font-size: 20px;
                 }
             }
             em {
-                font: 30px $ub;
+                font-family: $ub;
+                font-size: 20px;
                 color: #FFF;
+                font-style: normal;
                 @media (max-width: 1200px) {
-                    font-size: 24px;
+                    font-size: 20px;
                 }
                 @media (max-width: 900px) {
                     font-size: 20px;

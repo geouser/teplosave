@@ -175,7 +175,6 @@
 
     @media (max-width: 1169px) {
         margin: 0;
-        box-shadow: none;
     }
 
     &:after {
@@ -194,7 +193,7 @@
 
     &__image {
         width: 100%;
-        height: 250px;
+        height: 150px;
         background-color: #fff;
         position: relative;
         margin: 0;
@@ -202,6 +201,27 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: 50% 50%;
+        z-index: -1;
+
+        &:after {
+            content: '';
+            width: 100%;
+            height: 70px;
+            background: -moz-linear-gradient(top, rgba(244,251,252,0) 0%, rgba(244,251,252,1) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(244,251,252,0)), color-stop(100%, rgba(244,251,252,1)));
+            background: -webkit-linear-gradient(top, rgba(244,251,252,0) 0%, rgba(244,251,252,1) 100%);
+            background: -o-linear-gradient(top, rgba(244,251,252,0) 0%, rgba(244,251,252,1) 100%);
+            background: -ms-linear-gradient(top, rgba(244,251,252,0) 0%, rgba(244,251,252,1) 100%);
+            background: linear-gradient(to bottom, rgba(244,251,252,0) 0%, rgba(244,251,252,1) 100%);
+            position: absolute;
+            z-index: -1;
+            bottom: 0;
+            left: 0;
+        }
+
+        &.bg-height {
+            background-size: auto 100%;
+        }
 
         figcaption {
             position: absolute;
@@ -209,9 +229,10 @@
             bottom: 25px;
             width: 100%;
             text-align: center;
+            z-index: 1;
 
             a {
-                color: #fff;
+                color: $blue;
                 text-decoration: underline;
             }
         }
@@ -223,6 +244,12 @@
         text-align: left;
         background-color: #F4FBFC;
         position: relative;
+        font-size: 14px;
+        z-index: -1;
+
+        @media (max-width: 600px) {
+            font-size: 14px;
+        }
 
         .title {
             font-size: 24px;
@@ -243,60 +270,6 @@
                 margin-top: 15px;
             }
         }
-
-        .list-item {
-            list-style: none;
-            @include flex($alignI: flex-start);
-            color: #333;
-
-            &:not(:last-child) {
-                margin-bottom: 23px;
-
-                @media (max-width: 600px) {
-                    margin-bottom: 10px;
-                }
-            }
-
-            i.im {
-                width: 30px;
-                font-size: 25px;
-                color: #8C8C8C;
-
-                @media (max-width: 600px) {
-                    font-size: 18px;
-                    width: 20px;
-                }
-            }
-
-            p {
-                width: -webkit-calc(100% - 30px);
-                width: calc(100% - 30px);
-
-                @media (max-width: 600px) {
-                    width: -webkit-calc(100% - 20px);
-                    width: calc(100% - 20px);
-                }
-            }
-
-            &-title {
-                font-size: 14px;
-                color: #8C8C8C;
-                font-family: $ub;
-                display: block;
-
-                @media (max-width: 600px) {
-                    font-size: 11px;
-                }
-            }
-
-            &-text {
-                font-size: 16px;
-
-                @media (max-width: 600px) {
-                    font-size: 11px;
-                }
-            }
-        }
     }
 
 
@@ -315,15 +288,144 @@
         position: relative;
         z-index: -1;
         font-size: 14px;
+        min-height: 130px;
 
-        @media (max-width: 600px) {
-            padding: 10px 15px 15px;
-            font-size: 14px;
+        @media (max-width: 500px) {
+            padding: 20px;
+        }
+        
+        .list {
+            @include flex($alignI: flex-start);
+        }
+            
+        .list-item {
+            list-style: none;
+            width: 50%;
+            padding-right: 20px;
+            @include flex($alignI: flex-start);
+            color: #fff;
+
+            @media (max-width: 500px) {
+                width: 100%;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+
+                @media (max-width: 600px) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            i.im {
+                width: 40px;
+                font-size: 25px;
+                color: #fff;
+                text-align: center;
+                background-position: 50% 50%;
+
+                @media (max-width: 600px) {
+                    font-size: 18px;
+                    width: 20px;
+                }
+            }
+
+            p {
+                width: -webkit-calc(100% - 40px);
+                width: calc(100% - 40px);
+
+                @media (max-width: 600px) {
+                    width: -webkit-calc(100% - 20px);
+                    width: calc(100% - 20px);
+                }
+            }
+
+            &-title {
+                font-size: 14px;
+                color: #fff;
+                font-family: $ub;
+                display: inline-block;
+                margin-right: 10px;
+
+                @media (max-width: 600px) {
+                    font-size: 11px;
+                }
+            }
+
+            &-text {
+                font-size: 16px;
+
+                @media (max-width: 600px) {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+
+    &--wide {
+        @include flex($alignI: stretch);
+
+        .product__image {
+            width: 50%;
+            background-color: #fff;
+            height: auto;
+            padding: 50px 0;
+            @extend %vertAlign;
+
+            @media (max-width: 700px) {
+                width: 100%;
+                height: 250px;
+                padding-top: 25px;
+
+                &:before {
+                    display: none;
+                }
+            }
+            
+            img {
+                max-width: 60%;
+                display: inline-block;
+                vertical-align: middle;
+
+                @media (max-width: 700px) {
+                    max-width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+        .product__info {
+            width: 50%;
+
+            @media (max-width: 700px) {
+                width: 100%;
+            }
         }
 
-        .title {
-            text-transform: uppercase;
-            margin-bottom: 20px;
+        .app-area {
+
+            @media (min-width: 1001px) {
+                .list-item {
+                    width: 20%;
+                    display: block;
+
+                    i.im {
+                        margin-left: auto;
+                        margin-right: auto;
+                        display: block;
+                        margin-bottom: 5px;
+                    }
+
+                    p {
+                        width: 100%;
+                    }
+                }    
+            }
         }
+
+
     }
 }
