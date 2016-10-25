@@ -29,6 +29,7 @@ jQuery(document).ready(function($) {
     $('select').each(function(index, el) { 
         var select = $(this);
         var block = $(this).parent();
+        var group = block.parent().parent();
         var label = block.append('<span class="select-label"></span>').find('.select-label');
         var dropdown = block.append('<ul class="select-dropdown"></ul>').find('.select-dropdown');
 
@@ -42,6 +43,7 @@ jQuery(document).ready(function($) {
         label.on('click', function(event) {
             event.preventDefault();
             dropdown.slideToggle('fast');
+            group.toggleClass('active');
         });
 
         label.text( dropdown.find('.select-dropdown-item').first().addClass('active').text() );
@@ -53,6 +55,7 @@ jQuery(document).ready(function($) {
             label.text($(this).text());
             select.val( $(this).attr('data-value') );
             dropdown.slideToggle('fast');
+            group.removeClass('active');
         });
     });
 

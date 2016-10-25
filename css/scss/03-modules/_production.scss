@@ -66,11 +66,11 @@
     }
 
     .slick-arrow {
-        top: auto;
-        bottom: -50px;
-        margin-top: 0;
-        width: 35px;
-        height: 35px;
+        top: 50%;
+        /*bottom: -50px;*/
+        /*margin-top: 0;*/
+        width: 50px;
+        height: 50px;
         transition: all 0.3s ease;
         border-radius: 50%;
         overflow: hidden;
@@ -123,8 +123,17 @@
             background: -o-linear-gradient(left, rgba(0,173,203,1) 0%, rgba(30,181,163,1) 100%);
             background: -ms-linear-gradient(left, rgba(0,173,203,1) 0%, rgba(30,181,163,1) 100%);
             background: linear-gradient(to right, rgba(0,173,203,1) 0%, rgba(30,181,163,1) 100%);
-            left: 50%;
-            margin-left: -110px;
+            right: 100%;
+            left: auto;
+            /*left: 50%;*/
+            /*margin-left: -110px;*/
+
+            @media (max-width: 1250px) {
+                left: 20px;
+                right: auto;
+                top: 130px;
+                margin-top: -25px;
+            }
 
             &:before {
                 border-top: 2px solid $blue;
@@ -145,8 +154,17 @@
             background: -o-linear-gradient(left, rgba(30,181,163,1) 0%, rgba(0,173,203,1) 100%);
             background: -ms-linear-gradient(left, rgba(30,181,163,1) 0%, rgba(0,173,203,1) 100%);
             background: linear-gradient(to right, rgba(30,181,163,1) 0%, rgba(0,173,203,1) 100%);
-            right: 50%;
-            margin-right: -110px;
+            left: 100%;
+            right: auto;
+            /*right: 50%;*/
+            /*margin-right: -110px;*/
+
+            @media (max-width: 1250px) {
+                right: 20px;
+                left: auto;
+                top: 130px;
+                margin-top: -25px;
+            }
 
             &:before {
                 border-right: 2px solid $blue;
@@ -189,11 +207,12 @@
         border: 2px solid #fff;
         z-index: -1;
         box-sizing: border-box;
+        pointer-events: none;
     }
 
     &__image {
         width: 100%;
-        height: 150px;
+        height: 260px;
         background-color: #fff;
         position: relative;
         margin: 0;
@@ -233,14 +252,22 @@
 
             a {
                 color: $blue;
-                text-decoration: underline;
+                text-decoration: none;
+                border-radius: 35px;
+                height: 35px;
+                border: 2px solid $blue;
+                line-height: 31px;
+                background-color: #fff;
+                display: inline-block;
+                padding: 0 10px;
             }
         }
     }
 
     &__info {
         width: 100%;
-        padding: 25px 20px 25px 15px;
+        padding: 20px 20px 20px 15px;
+        min-height: 155px;
         text-align: left;
         background-color: #F4FBFC;
         position: relative;
@@ -255,7 +282,7 @@
             font-size: 24px;
             font-family: $ub;
             font-weight: normal;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
 
             @media (max-width: 600px) {
                 font-size: 20px;
@@ -267,12 +294,23 @@
                 height: 2px;
                 display: block;
                 background-color: #11B2B5;
-                margin-top: 15px;
+                margin-top: 5px;
             }
         }
     }
 
-
+    
+    .download {
+        padding: 0 10px;
+        height: 35px;
+        border-radius: 35px;
+        border: 2px solid #fff;
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 31px;
+        display: inline-block;
+        font-size: 13px;
+    }
 
     .app-area {
         background: -moz-linear-gradient(top, rgba(0,173,203,1) 0%, rgba(30,181,163,1) 100%);
@@ -288,7 +326,7 @@
         position: relative;
         z-index: -1;
         font-size: 14px;
-        min-height: 130px;
+        min-height: 200px;
 
         @media (max-width: 500px) {
             padding: 20px;
@@ -310,7 +348,7 @@
             }
 
             &:not(:last-child) {
-                margin-bottom: 15px;
+                margin-bottom: 10px;
 
                 @media (max-width: 600px) {
                     margin-bottom: 10px;
@@ -341,11 +379,11 @@
             }
 
             &-title {
-                font-size: 14px;
+                font-size: 13px;
                 color: #fff;
                 font-family: $ub;
-                display: inline-block;
-                margin-right: 10px;
+                display: inline;
+                margin-right: 5px;
 
                 @media (max-width: 600px) {
                     font-size: 11px;
@@ -353,7 +391,8 @@
             }
 
             &-text {
-                font-size: 16px;
+                font-size: 13px;
+                display: inline;
 
                 @media (max-width: 600px) {
                     font-size: 11px;
@@ -406,8 +445,13 @@
         }
 
         .app-area {
-
+            min-height: initial;
             @media (min-width: 1001px) {
+
+                .list {
+                    @include flex($justify: center);
+                }
+                
                 .list-item {
                     width: 20%;
                     display: block;
